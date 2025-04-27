@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <ul class="flex flex-wrap justify-center -mb-px text-2xl font-medium text-center" id="default-tab"
+            data-tabs-toggle="#default-tab-content" role="tablist">
+            <li class="me-2" role="presentation">
+                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile"
+                    type="button" role="tab" aria-controls="profile" aria-selected="false">BAI1</button>
+            </li>
+            <li class="me-2" role="presentation">
+                <button
+                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                    id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard"
+                    aria-selected="false">BAI2</button>
+            </li>
+            <li class="me-2" role="presentation">
+                <button
+                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                    id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings"
+                    aria-selected="false">BAI3</button>
+            </li>
+            <li class="me-2" role="presentation">
+                <button
+                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                    id="settings2-tab" data-tabs-target="#settings2" type="button" role="tab" aria-controls="settings"
+                    aria-selected="false">BAI4</button>
+            </li>
+            <li role="presentation">
+                <button
+                    class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300"
+                    id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts"
+                    aria-selected="false">BAI5</button>
+            </li>
+        </ul>
+    </div>
+    <div id="default-tab-content">
+        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel"
+            aria-labelledby="profile-tab">
+            <p class="font-bold text-[rgb(200,50,50)] text-6xl dark:text-gray-400 text-center">TÍNH TIỀN LƯƠNG NHÂN VIÊN
+            </p>
+            <div style="width: 50%; margin: 30px auto;">
+                <ul>
+                    <li class="mb-2">Tiền lương nhân viên (VND):
+                        <input type="text" value="100.000"
+                            class="border border-gray-300 rounded-lg p-2 mb-4 text-center" />
+                    </li>
+                    <li class="mb-2">Nhập số ngày làm việc:
+                        <input type="number" id="dayOfWork" placeholder="Nhập số này làm việc"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                        <button id="btnSalary"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Tính tiền lương
+                        </button>
+                    </li>
+                </ul>
+                <p id="outputBt1" class="font-bold text-3xl py-3">NHẬP SỐ NGÀY LÀM VIỆC VÀ ẤN NÚT TÍNH TIỀN LƯƠNG ĐỂ RA
+                    ĐƯỢC TỔNG SỐ TIỀN</p>
+            </div>
+        </div>
+        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel"
+            aria-labelledby="dashboard-tab">
+            <p class="font-bold text-[rgb(200,50,50)] text-6xl dark:text-gray-400 text-center">TÍNH GIÁ TRỊ TRUNG BÌNH
+            </p>
+            <div style="width: 50%; margin: 30px auto;">
+                <ul>
+                    <li class="mb-2">Nhập số thứ nhất:
+                        <input type="number" id="numb1" placeholder="Nhập số thứ nhất"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                    </li>
+                    <li class="mb-2">Nhập số thứ hai:
+                        <input type="number" id="numb2" placeholder="Nhập số thứ hai"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                    </li>
+                    <li class="mb-2">Nhập số thứ ba:
+                        <input type="number" id="numb3" placeholder="Nhập số thứ ba"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                    </li>
+                    <li class="mb-2">Nhập số thứ tư:
+                        <input type="number" id="numb4" placeholder="Nhập số thứ tư"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                    </li>
+                    <li class="mb-2">Nhập số thứ năm:
+                        <input type="number" id="numb5" placeholder="Nhập số thứ năm"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                        <button id="btnAverage"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Tính giá trị trung bình
+                        </button>
+                    </li>
+                </ul>
+                <p id="outputBt2" class="font-bold text-3xl py-3">NHẬP NĂM SỐ CẦN TÍNH GIÁ TRỊ TRUNG BÌNH RỒI ÁN NÚT ĐỂ
+                    HIỂN THỊ KẾT QUẢ</p>
+            </div>
+        </div>
+        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel"
+            aria-labelledby="settings-tab">
+            <p class="font-bold text-[rgb(200,50,50)] text-6xl dark:text-gray-400 text-center">QUY ĐỔI TIỀN </p>
+            <div style="width: 50%; margin: 30px auto;">
+                <ul>
+                    <li class="mb-2">Gía USD Hiện tại (VND):
+                        <input type="text" value="23.000"
+                            class="border border-gray-300 rounded-lg p-2 mb-4 text-center" />
+                    </li>
+                    <li class="mb-2">Nhập số USD cần quy đổi:
+                        <input type="number" id="amountOfUSD" placeholder="Nhập số lượng USD "
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                        <button id="btnUSDToVND"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Đổi USD SANG VNĐ
+                        </button>
+                    </li>
+                </ul>
+                <p id="outputBt3" class="font-bold text-3xl py-3">NHẬP SỐ USD BẠN CÓ VÀ NHẤN NÚT QUY ĐỔI</p>
+            </div>
+        </div>
+        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings2" role="tabpanel"
+            aria-labelledby="settings2-tab">
+            <p class="font-bold text-[rgb(200,50,50)] text-6xl dark:text-gray-400 text-center">DIỆN TÍCH, CHU VI HÌNH
+                CHỮ NHẬT</p>
+            <div style="width: 50%; margin: 30px auto;">
+                <ul>
+                    <li class="mb-2">Nhập chiều dài (cm):
+                        <input type="number" id="hcn_length" placeholder="Nhập chiều dài hcn"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                    </li>
+                    <li class="mb-2">Nhập chiều rộng (cm):
+                        <input type="number" id="hcn_width" placeholder="Nhập chiều rộng hcn"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                        <button id="btnSPHcn"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Tính Chu vi (P), Diện tichs (S) hcn
+                        </button>
+                    </li>
+                </ul>
+                <p id="outputBt4" class="font-bold text-3xl py-3">NHẬP CHIỀU DÀI VÀ CHIỀU RỘNG RỒI ÁN NÚT ĐỂ
+                    HIỂN THỊ KẾT QUẢ TÍNH CHU VI VÀ DIỆN TÍCH HÌNH CHỮ NHẬT</p>
+            </div>
+        </div>
+        <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel"
+            aria-labelledby="contacts-tab">
+            <p class="font-bold text-[rgb(200,50,50)] text-6xl dark:text-gray-400 text-center">TÍNH TỔNG 2 KÝ SỐ</p>
+            <div style="width: 50%; margin: 30px auto;">
+                <ul>
+                    <li class="mb-2">Nhập số có 2 chữ số:
+                        <input type="number" id="NumbXY" placeholder="Nhập số tự nhiên có 2 chữ số"
+                            class="border border-gray-300 rounded-lg p-2 mb-4" />
+                        <button id="btnSum2KySo"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            Tính tổng 2 ký số
+                        </button>
+                    </li>
+                </ul>
+                <p id="outputBt5" class="font-bold text-3xl py-3">NHẬP SỐ CÓ 2 CHỮ SỐ VÀ NHẤN NỨT ĐẺ TÍNH TỔNG 2 CHỮ SỐ CỦA SỐ ĐÓ.</p>
+            </div>
+        </div>
+        <script src="./JS/BT5.js"></script>
+        <script src="./JS/BT4.js"></script>
+        <SCRIPt src="./JS/BT3.js"></SCRIPt>
+        <script src="./JS/bt2.JS"></script>
+        <script src="./JS/BT1.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
